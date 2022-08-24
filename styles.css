@@ -1,0 +1,81 @@
+body {
+    margin: 125px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(123, 251, 211);  
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
+    min-width: 450px;
+    min-height: 575px;
+    background-color: rgb(30, 54, 87);
+    border-radius: 5%;
+}
+
+card {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin: 25px 0;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 100px;
+    max-height: 100px;
+    background-color: rgb(119, 115, 126);
+    border-radius: 1rem;
+    color: rgb(123, 251, 211);
+    font-size: 50px;
+}
+
+card div {
+    margin: 5px 15px;
+}
+
+#buttonDisplay {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 400px;
+    max-height: 400px;
+    background-color: rgb(68, 125, 155);
+    border-radius: 5%;
+    padding: px;
+    gap: 10px;
+}
+
+.btnRow {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.one {
+    margin-top: 10px;
+}
+
+.five {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+button {
+    min-width: 87px;
+    background-color: rgb(30, 54, 87);
+    border: none;
+    border-radius: 10%;
+    color: white;
+    font-size: 40px;
+}
+
+#clear {
+    color: rgb(123, 251, 211);
+    padding: 0 150px;
+    border-radius: 1rem;
+}
