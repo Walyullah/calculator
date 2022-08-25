@@ -2,7 +2,7 @@ body {
     margin: 125px;
     display: flex;
     justify-content: center;
-    background-color: rgb(123, 251, 211);  
+    background-color: #266867;  
 }
 
 #container {
@@ -11,7 +11,7 @@ body {
     align-items: center;
     min-width: 450px;
     min-height: 575px;
-    background-color: rgb(30, 54, 87);
+    background-color: #f8bc74;
     border-radius: 5%;
 }
 
@@ -24,9 +24,9 @@ card {
     max-width: 400px;
     min-height: 100px;
     max-height: 100px;
-    background-color: rgb(119, 115, 126);
+    background-color: #ffe2be;
     border-radius: 1rem;
-    color: rgb(123, 251, 211);
+    color: #266867;
     font-size: 50px;
 }
 
@@ -41,7 +41,7 @@ card div {
     max-width: 400px;
     min-height: 400px;
     max-height: 400px;
-    background-color: rgb(68, 125, 155);
+    background-color: #ffe2be;
     border-radius: 5%;
     padding: px;
     gap: 10px;
@@ -66,15 +66,24 @@ card div {
 
 button {
     min-width: 87px;
-    background-color: rgb(30, 54, 87);
-    border-color: rgb(123, 251, 211);
+    background-color: #266867;
+    border-color: #81f3f181;
     border-radius: 10%;
     color: white;
     font-size: 40px;
 }
 
+#add,
+#subtract,
+#multiply,
+#divide,
+#decimal,
+#equals {
+    color: lightcoral;
+}
+
 #clear {
-    color: rgb(123, 251, 211);
+    color: lightcoral;
     padding: 0 150px;
     border-radius: 1rem;
 }

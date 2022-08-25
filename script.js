@@ -33,8 +33,8 @@ const operate = function (operator, a, b) {
         answer = divide(a, b);
     }
 
-    console.log(`ans is ${answer}`);
-    return answer;
+    //console.log(typeof(answer));
+    return (Math.round((answer + Number.EPSILON) * 100000) / 100000);
 }
 
 // write functions to populate the display when you click a button 
@@ -76,7 +76,7 @@ let operatorCount = 0;
 //other event listener funcs
 addbtn.addEventListener('click', function (e) {
     operatorCount++;
-    numbersArray.push(displayText);
+    numbersArray.push(displayText.substring(0,9));
     //console.log(numbersArray);
     displayText = '';
     operatorsArray.push('add');
@@ -86,7 +86,7 @@ addbtn.addEventListener('click', function (e) {
 
 subbtn.addEventListener('click', function (e) {
     operatorCount++;
-    numbersArray.push(displayText);
+    numbersArray.push(displayText.substring(0,9));
     //console.log(numbersArray);
     displayText = '';
     operatorsArray.push('subtract');
@@ -96,7 +96,7 @@ subbtn.addEventListener('click', function (e) {
 
 mulbtn.addEventListener('click', function (e) {
     operatorCount++;
-    numbersArray.push(displayText);
+    numbersArray.push(displayText.substring(0,9));
     //console.log(numbersArray);
     displayText = '';
     operatorsArray.push('multiply');
@@ -106,7 +106,7 @@ mulbtn.addEventListener('click', function (e) {
 
 divbtn.addEventListener('click', function (e) {
     operatorCount++;
-    numbersArray.push(displayText);
+    numbersArray.push(displayText.substring(0,9));
     //console.log(numbersArray);
     displayText = '';
     operatorsArray.push('divide');
@@ -116,7 +116,7 @@ divbtn.addEventListener('click', function (e) {
 
 equals.addEventListener('click', function (e) {
     let ans = 0;
-    numbersArray.push(displayText);
+    numbersArray.push(displayText.substring(0,9));
     //console.log(numbersArray);
     //console.log(operatorsArray);
     //console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
@@ -125,7 +125,7 @@ equals.addEventListener('click', function (e) {
         numbersArray.shift();
         numbersArray[0] = ans;
         operatorsArray.shift();
-        console.log(`shifted num ${numbersArray} and shifter op ${operatorsArray} and ans is ${ans}`);
+        //console.log(`shifted num ${numbersArray} and shifter op ${operatorsArray} and ans is ${ans}`);
     }
     displayDiv.innerText = ans;
     //console.log(ans);
@@ -153,59 +153,69 @@ function wipe () {
 one.addEventListener('click', function (e) {
     displayText += '1';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 two.addEventListener('click', function (e) {
     displayText += '2';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 three.addEventListener('click', function (e) {
     displayText += '3';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 four.addEventListener('click', function (e) {
     displayText += '4';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 five.addEventListener('click', function (e) {
     displayText += '5';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 six.addEventListener('click', function (e) {
     displayText += '6';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 seven.addEventListener('click', function (e) {
     displayText += '7';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 eight.addEventListener('click', function (e) {
     displayText += '8';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 nine.addEventListener('click', function (e) {
     displayText += '9';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
 
 zero.addEventListener('click', function (e) {
     displayText += '0';
     //console.log(displayText);
+    if (displayText.length > 9) displayText = displayText.substring(0,9);
     displayDiv.innerText = displayText;
 })
