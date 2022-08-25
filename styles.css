@@ -71,6 +71,7 @@ button {
     border-radius: 10%;
     color: white;
     font-size: 40px;
+    font-family: monospace;
 }
 
 #add,
@@ -84,6 +85,6 @@ button {
 
 #clear {
     color: lightcoral;
-    padding: 0 150px;
+    padding: 0 130px;
     border-radius: 1rem;
 }
