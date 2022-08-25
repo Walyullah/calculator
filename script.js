@@ -12,12 +12,6 @@ const subtract = function (a, b) {
 
 const multiply = function (a, b) {
     return Number(a) * Number(b);
-    // const array = arguments[0];
-    // let product = 1;
-    // for (let i = 0; i < array.length; i++) {
-    //   product *= array[i];
-    // }
-    // return product;
 };
 
 const divide = function (a, b) {
@@ -27,15 +21,15 @@ const divide = function (a, b) {
 const operate = function (operator, a, b) {
     let answer = 0;
 
-    if (operator === add) {
+    if (operator === 'add') {
         answer = add(a, b);
-    } else if (operator === subtract) {
+    } else if (operator === 'subtract') {
         answer = subtract(a, b);
-    } else if (operator === multiply) {
+    } else if (operator === 'multiply') {
         answer = multiply(a, b);
     } else if (operator === divide && b == 0 ) {
         answer = 'ERRO...';
-    } else if (operator === divide) {
+    } else if (operator === 'divide') {
         answer = divide(a, b);
     }
 
@@ -69,118 +63,149 @@ const displayDiv = document.getElementById('displayDiv');
 
 let operator = '';
 let displayText = '';
-let firstNum = '';
-let secondNum = '';
+// let firstNum = '';
+// let secondNum = '';
+
+let numbersArray = [];
+let operatorsArray = [];
+
+let operatorCount = 0;
 
 
 
 //other event listener funcs
 addbtn.addEventListener('click', function (e) {
-    firstNum = displayText;
+    operatorCount++;
+    numbersArray.push(displayText);
+    //console.log(numbersArray);
     displayText = '';
-    operator = add;
-    console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
+    operatorsArray.push('add');
+    //console.log(operatorsArray);
+    //console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
 })
 
 subbtn.addEventListener('click', function (e) {
-    firstNum = displayText;
+    operatorCount++;
+    numbersArray.push(displayText);
+    //console.log(numbersArray);
     displayText = '';
-    operator = subtract;
-    console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
+    operatorsArray.push('subtract');
+    //console.log(operatorsArray);
+    //console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
 })
 
 mulbtn.addEventListener('click', function (e) {
-    firstNum = displayText;
+    operatorCount++;
+    numbersArray.push(displayText);
+    //console.log(numbersArray);
     displayText = '';
-    operator = multiply;
-    console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
+    operatorsArray.push('multiply');
+    //console.log(operatorsArray);
+    //console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
 })
 
 divbtn.addEventListener('click', function (e) {
-    firstNum = displayText;
+    operatorCount++;
+    numbersArray.push(displayText);
+    //console.log(numbersArray);
     displayText = '';
-    operator = divide;
-    console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
+    operatorsArray.push('divide');
+    //console.log(operatorsArray);
+    //console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
 })
 
 equals.addEventListener('click', function (e) {
-    secondNum = displayText;
-    console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
-    displayDiv.innerText = operate(operator, firstNum, secondNum);
+    let ans = 0;
+    numbersArray.push(displayText);
+    //console.log(numbersArray);
+    //console.log(operatorsArray);
+    //console.log(`1st num is ${firstNum} and sign is ${operator} and 2nd num is ${secondNum}`);
+    for (let i = 0; i < operatorCount; i++) {
+        ans = operate(operatorsArray[0], numbersArray[0], numbersArray[1]);
+        numbersArray.shift();
+        numbersArray[0] = ans;
+        operatorsArray.shift();
+        console.log(`shifted num ${numbersArray} and shifter op ${operatorsArray} and ans is ${ans}`);
+    }
+    displayDiv.innerText = ans;
+    //console.log(ans);
+    //console.log(operatorCount);
     wipe();
 })
 
-clear.addEventListener('click', wipe);//function (e) {
-    // displayText = '';
-    // firstNum = '';
-    // secondNum = '';
-    // operator = '';
-//});
+clear.addEventListener('click', function (e) {
+    wipe();
+    displayDiv.innerText = 0;
+});
+
 
 function wipe () {
     displayText = '';
     firstNum = '';
     secondNum = '';
     operator = '';
+    numbersArray = [];
+    operatorsArray = [];
+    operatorCount = 0;
 }
 
 //number eventlistener funcs
 one.addEventListener('click', function (e) {
     displayText += '1';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 two.addEventListener('click', function (e) {
     displayText += '2';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 three.addEventListener('click', function (e) {
     displayText += '3';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 four.addEventListener('click', function (e) {
     displayText += '4';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 five.addEventListener('click', function (e) {
     displayText += '5';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 six.addEventListener('click', function (e) {
     displayText += '6';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 seven.addEventListener('click', function (e) {
     displayText += '7';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 eight.addEventListener('click', function (e) {
     displayText += '8';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 nine.addEventListener('click', function (e) {
     displayText += '9';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
 
 zero.addEventListener('click', function (e) {
     displayText += '0';
-    console.log(displayText);
+    //console.log(displayText);
     displayDiv.innerText = displayText;
 })
