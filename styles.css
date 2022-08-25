@@ -8,7 +8,6 @@ body {
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: ;
     align-items: center;
     min-width: 450px;
     min-height: 575px;
@@ -68,7 +67,7 @@ card div {
 button {
     min-width: 87px;
     background-color: rgb(30, 54, 87);
-    border: none;
+    border-color: rgb(123, 251, 211);
     border-radius: 10%;
     color: white;
     font-size: 40px;
